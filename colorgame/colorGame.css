@@ -25,3 +25,8 @@ h1 {
 	text-align: center;
 	color: black;
 }
+/*
+use this class to add add to the button that is selected*/
+.selected {
+	background: blue;
+}
