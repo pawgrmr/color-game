@@ -1,5 +1,7 @@
 body {
 	background-color: #232323;
+	margin: 0;
+	font-family: "helvetica";
 }
 
 .square {
@@ -8,15 +10,26 @@ body {
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;
+	border-radius: 20%; /*to add curve to the squares*/
+	transition: : background 0.5s; /*wont work in all browsers therefore do below:*/
+	-webkit-transition: background 0.5s; /*for transition animation support of all browsers - webkit is engine that browsers use like safari*/
+	-moz-transition: background 0.5s; /*moz is for firefox.*/
 }
 
 #container {
-	margin: 0px auto;
+	margin: 100px auto; /*100 top and bottom, auto left and right*/
 	max-width: 600px;
 }
 
 h1 {
 	color: white;
+	line-height: 2;
+	font-weight: normal;
+	text-align: center;
+	text-transform: uppercase;
+	background: purple;
+	margin: 0;
+	padding: 20px 0; /*//top and bottom */
 }
 
 #stripe {
@@ -25,8 +38,38 @@ h1 {
 	text-align: center;
 	color: black;
 }
+
+#message { /*span for the message - correct/try again*/
+	display: inline-block;
+	width: 20%;
+}
+
+#colorDisplay {
+	font-size: 150%;
+	font-weight: lighter;
+}
 /*
 use this class to add add to the button that is selected*/
 .selected {
-	background: blue;
+	background: purple;
+	color: white;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%; /*button extends from top to bottom*/
+	font-weight: normal;
+	color: purple;
+	letter-spacing: 1.5px;
+	font-size: inherit;
+	transition: all 0.5s; /*animate transition to 0.5sec*/
+	-webkit-transition: background 0.5s; /*for transition animation support of all browsers - webkit is engine that browsers use like safari*/
+	-moz-transition: background 0.5s; /*moz is for firefox.*/
+}
+
+button:hover {
+	color: white;
+	background: purple;
 }

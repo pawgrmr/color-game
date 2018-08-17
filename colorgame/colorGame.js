@@ -68,7 +68,7 @@ resetButton.addEventListener("click", function(){
 	squares[i].style.backgroundColor = colors[i];
 	}
 	//change color of stripe in background back to original
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "#white";
 })
 
 colorDisplay.textContent = pickedColor;
