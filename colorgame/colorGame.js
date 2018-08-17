@@ -21,12 +21,36 @@ easyBtn.addEventListener("click", function(){
 	//select easy button, turn off hard button
 	easyBtn.classList.add("selected");
 	hardBtn.classList.remove("selected");
+	//change to 3 colors
+	colors = generateRandomColors(3);
+	pickedColor = pickColor();
+	//change the written color to be same as pickedcolor
+	colorDisplay.textContent = pickedColor;
+	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
+	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
+		if(colors[i]){ //this will happen on the first 3
+			squares[i].style.backgroundColor = colors[i];
+		} else {
+			squares[i].style.display = "none"; //becaus console still shows 3 in array even though display doesnt.
+		}
+	}
 });
 
 hardBtn.addEventListener("click", function(){
 	//select hard button, turn off easy button
 	hardBtn.classList.add("selected");
 	easyBtn.classList.remove("selected");
+	//change to 6 colors
+	colors = generateRandomColors(6); 
+	pickedColor = pickColor();
+	//change the written color to be same as pickedcolor
+	colorDisplay.textContent = pickedColor;
+	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
+	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
+		
+			squares[i].style.backgroundColor = colors[i];
+			squares[i].style.display = "block";
+	}
 });
 
 resetButton.addEventListener("click", function(){
