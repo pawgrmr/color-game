@@ -62,6 +62,8 @@ resetButton.addEventListener("click", function(){
 	pickedColor = pickColor();
 	//change colorDisplay to match picked color
 	colorDisplay.textContent = pickedColor;
+	//change the play again back to new colors
+	this.textContent = "New Colors" //this refers to resetButton eventlistener. can also write it as resetButton.textcontent
 	//change colors of squares on page
 	for(var i = 0; i < squares.length; i++){
 	// add initial colors to squares
@@ -69,6 +71,7 @@ resetButton.addEventListener("click", function(){
 	}
 	//change color of stripe in background back to original
 	h1.style.backgroundColor = "#white";
+	messageDisplay.textContent = " "; // makes correct disappear 
 })
 
 colorDisplay.textContent = pickedColor;
@@ -82,7 +85,7 @@ for(var i = 0; i < squares.length; i++){
 		//grab color of clicked squares
 		var clickedColor = this.style.backgroundColor;
 		//compare color to pickedColor
-		if(clickedColor === pickedColor) {
+		if(clickedColor === pickedColor) { //if user wins
 			messageDisplay.textContent = "Correct!";
 			resetButton.textContent = "Play Again?"
 			changeColors(clickedColor);

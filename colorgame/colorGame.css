@@ -57,6 +57,7 @@ use this class to add add to the button that is selected*/
 
 button {
 	border: none;
+	outline: none;
 	background: none;
 	text-transform: uppercase;
 	height: 100%; /*button extends from top to bottom*/
