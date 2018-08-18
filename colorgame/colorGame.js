@@ -18,43 +18,50 @@ var resetButton = document.querySelector("#reset");
 // var hardBtn = document.querySelector("#hardBtn");
 var modeButtons = document.querySelectorAll(".mode");
 
-easyBtn.addEventListener("click", function(){
-	//select easy button, turn off hard button
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
-	//change to 3 colors
-	numSquares = 3;
-	colors = generateRandomColors(numSquares);
-	pickedColor = pickColor();
-	//change the written color to be same as pickedcolor
-	colorDisplay.textContent = pickedColor;
-	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
-	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
-		if(colors[i]){ //this will happen on the first 3
-			squares[i].style.backgroundColor = colors[i];
-		} else {
-			squares[i].style.display = "none"; //becaus console still shows 3 in array even though display doesnt.
-		}
-	}
-});
+//write button code into a for loop for selection
+for (var i = 0; i < modeButtons.length; i++){
+	modeButtons[0].classList.remove("selected");//to remove highlighed button from easy
+	modeButtons[1].classList.remove("selected");//to remove highlighted button from hard
+	this.classList.add("selected");
+}
 
-hardBtn.addEventListener("click", function(){
-	//select hard button, turn off easy button
-	hardBtn.classList.add("selected");
-	easyBtn.classList.remove("selected");
-	//change to 6 colors
-	numSquares = 6;
-	colors = generateRandomColors(numSquares); 
-	pickedColor = pickColor();
-	//change the written color to be same as pickedcolor
-	colorDisplay.textContent = pickedColor;
-	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
-	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
+// easyBtn.addEventListener("click", function(){
+// 	//select easy button, turn off hard button
+// 	easyBtn.classList.add("selected");
+// 	hardBtn.classList.remove("selected");
+// 	//change to 3 colors
+// 	numSquares = 3;
+// 	colors = generateRandomColors(numSquares);
+// 	pickedColor = pickColor();
+// 	//change the written color to be same as pickedcolor
+// 	colorDisplay.textContent = pickedColor;
+// 	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
+// 	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
+// 		if(colors[i]){ //this will happen on the first 3
+// 			squares[i].style.backgroundColor = colors[i];
+// 		} else {
+// 			squares[i].style.display = "none"; //becaus console still shows 3 in array even though display doesnt.
+// 		}
+// 	}
+// });
+
+// hardBtn.addEventListener("click", function(){
+// 	//select hard button, turn off easy button
+// 	hardBtn.classList.add("selected");
+// 	easyBtn.classList.remove("selected");
+// 	//change to 6 colors
+// 	numSquares = 6;
+// 	colors = generateRandomColors(numSquares); 
+// 	pickedColor = pickColor();
+// 	//change the written color to be same as pickedcolor
+// 	colorDisplay.textContent = pickedColor;
+// 	//change colors in the first 3 squares. Take advantage of the colors array which in this case has only 3 colors.
+// 	for(var i = 0; i < squares.length; i++) {// this will loop through all squares and change the color if there is a next color.
 		
-			squares[i].style.backgroundColor = colors[i];
-			squares[i].style.display = "block";
-	}
-});
+// 			squares[i].style.backgroundColor = colors[i];
+// 			squares[i].style.display = "block";
+// 	}
+// });
 
 resetButton.addEventListener("click", function(){
 	//generate all new colors
