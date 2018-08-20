@@ -1,1 +1,1 @@
-# udemy-js
+Color game project from Udemy
